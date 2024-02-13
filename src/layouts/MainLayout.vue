@@ -106,65 +106,7 @@ function toggleLanguage() {
       </q-tabs>
     </q-drawer>
 
-    <!-- Oldalsáv a jobb oldalon -->
-    <q-drawer v-model="showRightDrawer" elevated side="right" :width="150">
-      <q-tabs inline-label vertical>
-        <q-banner class="bg-secondary text-white">{{ $t("links") }}</q-banner>
-        <q-route-tab
-          href="https://quasar.dev/"
-          label="Quasar Dev"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://vuejs.org/"
-          label="Vue.JS"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://router.vuejs.org/"
-          label="Vue Router"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://www.typescriptlang.org/"
-          label="TypeScript"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://pinia.vuejs.org/"
-          label="Pinia"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://pictogrammers.com/library/mdi/"
-          label="MDI Icons"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://mui.com/material-ui/material-icons/"
-          label="Material Icons"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://eslint.org/"
-          label="ESLint"
-          no-caps
-          target="_blank"
-        />
-        <q-route-tab
-          href="https://github.com/typicode/json-server"
-          label="JSON Server"
-          no-caps
-          target="_blank"
-        /> </q-tabs
-    ></q-drawer>
+    
 
     <!-- Lábléc (állapot sor) -->
     <q-footer v-model="showStatusBar" class="bg-jedlikred text-white" elevated>
