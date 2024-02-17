@@ -1,12 +1,12 @@
 <script setup lang="ts">
-
 import CategorySelector from "../components/CategorySelector.vue";
-
 </script>
 
 <template>
   <q-page>
     <CategorySelector></CategorySelector>
+
+    
   </q-page>
 </template>
 
