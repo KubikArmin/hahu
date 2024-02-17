@@ -21,20 +21,25 @@ export interface IApp {
 }
 
 export interface IOne {
-  id?: number;
-  categoryNameField?: string;
+  _id?: Number;
+  nev?: String;
 }
 
 export interface IMany {
-  id?: number; // PK
-  categoryId?: number; // FK
-  titleField?: string;
-  descField?: string;
-  dateField?: string;
-  boolField?: boolean;
-  priceField?: number;
-  imgField?: string;
-  category?: IOne;
+  _id?: Number; // PK
+  kategoria_id?: Number; // FK
+  cim?: String;
+  evjareat?: Number;
+  km_allas?: Number;
+  szin?: String;
+  uzemanyag?: String;
+  hengerurtartalom?: Number;
+  teljesitmeny?: Number;
+  serulesmentes?: Boolean;
+  leiras?: String;
+  hirdetes_datum?: Date;
+  vetelar?: Number;
+  kepek?: Array<String>;
 }
 
 export interface IOther {
@@ -127,10 +132,10 @@ export const useStore = defineStore({
     },
 
     async many_GetById(): Promise<void> {
-      if (this.many?.document?.id) {
+      if (this.many?.document?._id) {
         Loading.show();
         api
-          .get(`api/advertisements/${this.many.document.id}`)
+          .get(`api/advertisements/${this.many.document._id}`)
           .then((res) => {
             Loading.hide();
             if (res?.data) {
@@ -164,7 +169,7 @@ export const useStore = defineStore({
     },
 
     async many_EditById(): Promise<void> {
-      if (this.many?.document?.id) {
+      if (this.many?.document?._id) {
         const diff: any = {};
         // the diff object only stores changed fields:
         Object.keys(this.many.document).forEach((k, i) => {
@@ -180,13 +185,13 @@ export const useStore = defineStore({
         } else {
           Loading.show();
           api
-            .patch(`api/advertisements/${this.many.document.id}`, diff)
+            .patch(`api/advertisements/${this.many.document._id}`, diff)
             .then((res) => {
               Loading.hide();
-              if (res?.data?.id) {
+              if (res?.data?._id) {
                 this.many_GetAll(); // refresh dataN with read all data again from backend
                 Notify.create({
-                  message: `Document with id=${res.data.id} has been edited successfully!`,
+                  message: `Document with id=${res.data._id} has been edited successfully!`,
                   color: "positive",
                 });
               }
@@ -199,15 +204,15 @@ export const useStore = defineStore({
     },
 
     async many_DeleteById(): Promise<void> {
-      if (this.many?.document?.id) {
+      if (this.many?.document?._id) {
         Loading.show();
         api
-          .delete(`api/advertisements/${this.many.document.id}`)
+          .delete(`api/advertisements/${this.many.document._id}`)
           .then(() => {
             Loading.hide();
             this.many_GetAll(); // refresh dataN with read all data again from backend
             Notify.create({
-              message: `Document with id=${this.many.document.id} has been deleted successfully!`,
+              message: `Document with id=${this.many.document._id} has been deleted successfully!`,
               color: "positive",
             });
           })
