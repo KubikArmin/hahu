@@ -21,25 +21,25 @@ export interface IApp {
 }
 
 export interface IOne {
-  _id?: Number;
-  nev?: String;
+  _id?: number;
+  nev?: string;
 }
 
 export interface IMany {
-  _id?: Number; // PK
-  kategoria_id?: Number; // FK
-  cim?: String;
-  evjareat?: Number;
-  km_allas?: Number;
-  szin?: String;
-  uzemanyag?: String;
-  hengerurtartalom?: Number;
-  teljesitmeny?: Number;
+  _id?: number; // PK
+  kategoria_id?: number; // FK
+  cim?: string;
+  evjareat?: number;
+  km_allas?: number;
+  szin?: string;
+  uzemanyag?: string;
+  hengerurtartalom?: number;
+  teljesitmeny?: number;
   serulesmentes?: Boolean;
-  leiras?: String;
+  leiras?: string;
   hirdetes_datum?: Date;
-  vetelar?: Number;
-  kepek?: Array<String>;
+  vetelar?: number;
+  kepek?: Array<string>;
 }
 
 export interface IOther {

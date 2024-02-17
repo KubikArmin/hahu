@@ -2,7 +2,11 @@
 import AdvertisementCard from "src/components/AdvertisementCard.vue";
 import CategorySelector from "../components/CategorySelector.vue";
 import {ads} from '../ads'
+//import EditDialogComponent from "../components/EditDialogComponent.vue";
+import { useStore } from "../stores/store";
+const store = useStore();
 
+//store.app.showEditDialog = true;
 const advertisements = ads
 </script>
 
@@ -17,6 +21,8 @@ const advertisements = ads
       <AdvertisementCard class="col-lg-4 col-md-6 col-sm-12" />
       <AdvertisementCard class="col-lg-4 col-md-6 col-sm-12" />
     </div>
+    <EditDialogComponent></EditDialogComponent>
+
   </q-page>
 </template>
 
