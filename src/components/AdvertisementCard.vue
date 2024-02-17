@@ -5,7 +5,7 @@ import { ref } from "vue";
 const store = useStore();
 
 function editDocument() {
-  store.many.document.id = store.app.selectedMany[0].id;
+  store.many.document._id = store.app.selectedMany[0]._id;
   store.app.showEditDialog = true;
 }
 

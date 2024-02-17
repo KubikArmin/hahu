@@ -3,11 +3,6 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "baseUrl": ".",
-    "types": [
-      "node",
-      "vite/client",
-      "pinia-plugin-persist",
-      "@intlify/unplugin-vue-i18n/messages"
-    ]
+    "types": ["node", "vite/client", "pinia-plugin-persist", "@intlify/unplugin-vue-i18n/messages"]
   }
 }
