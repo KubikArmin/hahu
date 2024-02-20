@@ -103,7 +103,7 @@ export const useStore = defineStore({
       Loading.show();
       this.one.documents = [];
       api
-        .get("api/categories")
+        .get("api/kategoriak")
         .then((res) => {
           Loading.hide();
           if (res?.data) {
