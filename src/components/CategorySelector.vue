@@ -4,50 +4,21 @@ import { ref } from "vue";
 
 let model = ref(null);
 
-let options = [
-  {
-    _id: 1,
-    nev: "Személyautó",
-  },
-  {
-    _id: 2,
-    nev: "Kishaszonjármű",
-  },
-  {
-    _id: 3,
-    nev: "Munkagép",
-  },
-  {
-    _id: 4,
-    nev: "Motorkerékpár",
-  },
-  {
-    _id: 5,
-    nev: "E-bike",
-  },
-  {
-    _id: 6,
-    nev: "Lakókocsi",
-  },
-  {
-    _id: 7,
-    nev: "Hajó",
-  },
-];
+
 const store = useStore();
 
-// store.one_GetAll().then(res => console.log(res));
+store.one_GetAll().then(res => console.log(res));
 
-// function filterUpdate() {
-//   if (!store.app.filter) {
-//     store.app.filter = "";
-//   }
-//   if (store.app.filter.length > 0) {
-//     store.many_Filter();
-//   } else {
-//     store.many_GetAll();
-//   }
-// }
+function filterUpdate() {
+  if (!store.app.filter) {
+    store.app.filter = "";
+  }
+  if (store.app.filter.length > 0) {
+    store.many_Filter();
+  } else {
+    store.many_GetAll();
+  }
+}
 </script>
 
 <template>
@@ -56,7 +27,7 @@ const store = useStore();
       <!-- <q-badge color="secondary" multi-line>
         Model: "{{ model }}"
       </q-badge> -->
-      <q-select filled v-model="model" option-value="_id" option-label="nev" :options="options" label="Kategória" />
+      <q-select filled v-model="model" option-value="_id" option-label="nev" :options="store.one.documents" label="Kategória" />
     </div>
   </div>
 </template>
